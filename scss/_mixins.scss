@@ -1,0 +1,8 @@
+@mixin background-gradient {
+  background: rgb(250, 228, 168);
+  background: radial-gradient(
+    circle,
+    rgba(250, 228, 168, 1) 0%,
+    rgba(250, 235, 211, 1) 100%
+  );
+}
