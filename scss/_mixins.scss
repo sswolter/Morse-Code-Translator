@@ -1,0 +1,35 @@
+@use "./palette" as *;
+@mixin background-gradient {
+  background: rgb(250, 228, 168);
+  background: radial-gradient(
+    circle,
+    rgba(250, 228, 168, 0.686) 0%,
+    rgba(250, 235, 211, 1) 100%
+  );
+}
+
+@mixin textarea {
+  display: block;
+  resize: none;
+  border-radius: 15px;
+  border: 2px solid $sub;
+  background-color: $light;
+  padding: 15px;
+  font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Regular";
+  color: $brown-dark;
+  font-size: 15px;
+  height: 100px;
+  width: 680px;
+
+  &:focus {
+    outline: solid 1px $sub;
+  }
+}
+
+@mixin h2 {
+  font-family: $font2;
+  font-size: 30px;
+  padding: 15px 10px 10px 10px;
+  color: $light;
+  letter-spacing: 1px;
+}

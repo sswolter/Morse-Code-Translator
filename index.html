@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morse Code Translator</title>
+
+    <script type="module" src="./scripts/dom.js" defer></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Assistant&family=Fredoka:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Morse Code Translator</h1>
+      <section class="info">
+        <!-- <h3>About</h3> -->
+
+        <h3 id="morseChart"><a href="#chart">Morse Code Chart</a></h3>
+      </section>
+      <main>
+        <div class="input">
+          <div class="heading">
+            <h2 id="inputLan">Text</h2>
+          </div>
+
+          <form action="" class="input__form">
+            <textarea name="" id="inputArea" cols="30" rows="5"></textarea>
+            <div class="buttons">
+              <input
+                class="buttons__btn"
+                id="translateBtn"
+                type="submit"
+                value="Translate"
+              />
+              <input
+                class="buttons__btn"
+                id="clearBtn"
+                type="submit"
+                value="Clear"
+              />
+              <img
+                class="buttons__btn"
+                src="./assets/reverse.svg"
+                alt="convert morse code to text"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="output">
+          <h2>Translation</h2>
+          <textarea name="" id="outputArea" cols="30" rows="5"></textarea>
+        </div>
+      </main>
+    </div>
+    <section class="chart" id="chart">
+      <h2>Morse Code Chart</h2>
+      <div class="grid-container">
+        <div class="grid-item">
+          <p>A</p>
+          <p>.-</p>
+        </div>
+        <div class="grid-item">
+          <p>B</p>
+          <p>-...</p>
+        </div>
+        <div class="grid-item">
+          <p>C</p>
+          <p>-.-.</p>
+        </div>
+        <div class="grid-item">
+          <p>D</p>
+          <p>-..</p>
+        </div>
+        <div class="grid-item">
+          <p>E</p>
+          <p>.</p>
+        </div>
+        <div class="grid-item">
+          <p>F</p>
+          <p>..-.</p>
+        </div>
+        <div class="grid-item">
+          <p>G</p>
+          <p>--.</p>
+        </div>
+        <div class="grid-item">
+          <p>H</p>
+          <p>....</p>
+        </div>
+        <div class="grid-item">
+          <p>I</p>
+          <p>..</p>
+        </div>
+        <div class="grid-item">
+          <p>J</p>
+          <p>.---</p>
+        </div>
+        <div class="grid-item">
+          <p>K</p>
+          <p>-.-</p>
+        </div>
+        <div class="grid-item">
+          <p>L</p>
+          <p>.-..</p>
+        </div>
+        <div class="grid-item">
+          <p>M</p>
+          <p></p>
+        </div>
+        <div class="grid-item">
+          <p>N</p>
+          <p></p>
+        </div>
+        <div class="grid-item">
+          <p>O</p>
+          <p>---</p>
+        </div>
+        <div class="grid-item">
+          <p>P</p>
+          <p>.--.</p>
+        </div>
+        <div class="grid-item">
+          <p>Q</p>
+          <p>--.--</p>
+        </div>
+        <div class="grid-item">
+          <p>R</p>
+          <p>.-.</p>
+        </div>
+        <div class="grid-item">
+          <p>S</p>
+          <p>...</p>
+        </div>
+        <div class="grid-item">
+          <p>T</p>
+          <p>-</p>
+        </div>
+        <div class="grid-item">
+          <p>U</p>
+          <p>..-</p>
+        </div>
+        <div class="grid-item">
+          <p>V</p>
+          <p>...-</p>
+        </div>
+        <div class="grid-item">
+          <p>W</p>
+          <p>.--</p>
+        </div>
+        <div class="grid-item">
+          <p>X</p>
+          <p>-..-</p>
+        </div>
+        <div class="grid-item">
+          <p>Y</p>
+          <p>-.--</p>
+        </div>
+        <div class="grid-item">
+          <p>Z</p>
+          <p>--..</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
