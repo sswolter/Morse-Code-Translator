@@ -16,46 +16,49 @@
     />
   </head>
   <body>
-    <h1>Morse Code Translator</h1>
-    <section class="info">
-      <!-- <h3>About</h3> -->
-      <h3>Morse Code Chart</h3>
-    </section>
-    <main>
-      <div class="input">
-        <div class="heading">
-          <h2 id="inputLan">Text</h2>
-        </div>
+    <div class="wrapper">
+      <h1>Morse Code Translator</h1>
+      <section class="info">
+        <!-- <h3>About</h3> -->
 
-        <form action="" class="input__form">
-          <textarea name="" id="inputArea" cols="30" rows="5"></textarea>
-          <div class="buttons">
-            <input
-              class="buttons__btn"
-              id="translateBtn"
-              type="submit"
-              value="Translate"
-            />
-            <input
-              class="buttons__btn"
-              id="clearBtn"
-              type="submit"
-              value="Clear"
-            />
-            <img
-              class="buttons__btn"
-              src="./assets/reverse.svg"
-              alt="convert morse code to text"
-            />
+        <h3 id="morseChart"><a href="#chart">Morse Code Chart</a></h3>
+      </section>
+      <main>
+        <div class="input">
+          <div class="heading">
+            <h2 id="inputLan">Text</h2>
           </div>
-        </form>
-      </div>
-      <div class="output">
-        <h2>Translation</h2>
-        <textarea name="" id="outputArea" cols="30" rows="5"></textarea>
-      </div>
-    </main>
-    <section class="chart">
+
+          <form action="" class="input__form">
+            <textarea name="" id="inputArea" cols="30" rows="5"></textarea>
+            <div class="buttons">
+              <input
+                class="buttons__btn"
+                id="translateBtn"
+                type="submit"
+                value="Translate"
+              />
+              <input
+                class="buttons__btn"
+                id="clearBtn"
+                type="submit"
+                value="Clear"
+              />
+              <img
+                class="buttons__btn"
+                src="./assets/reverse.svg"
+                alt="convert morse code to text"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="output">
+          <h2>Translation</h2>
+          <textarea name="" id="outputArea" cols="30" rows="5"></textarea>
+        </div>
+      </main>
+    </div>
+    <section class="chart" id="chart">
       <h2>Morse Code Chart</h2>
       <div class="grid-container">
         <div class="grid-item">

@@ -7,19 +7,25 @@
   padding: 0px;
   margin: 0px;
   color: $main;
-  // font-family: $font;
+  font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 body {
+  background-color: $bg;
+}
+.wrapper {
   background-color: $bg;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Regular",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
   line-height: 18px;
-  height: 80vh;
+  height: 100vh;
 
   > h1 {
     margin-top: 00px;
@@ -82,20 +88,6 @@ main {
   @include textarea;
   position: relative;
   bottom: 30px;
-}
-
-.key {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  > h2 {
-    font-family: $font2;
-  }
-  > .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
-  }
 }
 
 #outputArea {
@@ -164,18 +156,32 @@ img {
 }
 
 .chart {
-  position: fixed;
   display: flex;
   flex-direction: column;
-  background-color: rgba(210, 211, 147, 0.5);
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 100px;
 
   > h2 {
     @include h2;
+    color: $main;
   }
 
   > .grid-container {
-    display: block;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    padding-top: 20px;
+    width: 500px;
+    > .grid-item {
+      text-align: center;
+      border: 1px solid $light;
+      padding: 10px 0px;
+
+      > p {
+        font-weight: bold;
+      }
+    }
   }
 }

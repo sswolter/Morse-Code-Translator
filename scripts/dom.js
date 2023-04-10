@@ -17,12 +17,10 @@ const heading = document.querySelector(".heading");
 
 img.addEventListener("click", (event) => {
   if (morseOutput) {
-    console.log("output is to morse");
     img.src = "./assets/reverse.svg";
     inputLan.innerText = "Text";
     heading.style.width = "90px";
   } else {
-    console.log("output is to text");
     img.src = "./assets/reverse-f.svg";
     inputLan.innerText = "Morse";
     heading.style.width = "110px";
@@ -64,7 +62,3 @@ translateBtn.addEventListener("click", (event) => {
     outputArea.value = "";
   });
 });
-
-const chart = document.querySelector(".chart");
-
-chart.addEventListener("click", (event) => {});
