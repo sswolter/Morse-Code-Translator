@@ -1,0 +1,181 @@
+@use "./palette" as *;
+@use "./mixins" as *;
+@forward "./mixins";
+@forward "./palette";
+
+* {
+  padding: 0px;
+  margin: 0px;
+  color: $main;
+  // font-family: $font;
+}
+
+body {
+  background-color: $bg;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  line-height: 18px;
+  height: 80vh;
+
+  > h1 {
+    margin-top: 00px;
+    font-family: $font2;
+    font-size: 50px;
+    padding: 20px;
+  }
+}
+
+section {
+  display: flex;
+  padding-bottom: 50px;
+  > h3 {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 20px;
+    text-decoration: underline;
+
+    &:hover {
+      color: $brown-dark;
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  padding-bottom: 20px;
+
+  > .heading {
+    background-color: $sub;
+    width: 90px;
+    border-radius: 15px;
+    padding-bottom: 30px;
+
+    > h2 {
+      @include h2;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    > #btn {
+      width: 70px;
+      height: 30px;
+      border-radius: 4px;
+      border: none;
+      margin-top: 20px;
+    }
+  }
+}
+
+#inputArea {
+  @include textarea;
+  position: relative;
+  bottom: 30px;
+}
+
+.key {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  > h2 {
+    font-family: $font2;
+  }
+  > .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+#outputArea {
+  @include textarea;
+}
+
+#clearBtn {
+  border: none;
+  padding: 10px;
+  font-family: $font2;
+  letter-spacing: 2px;
+  // margin: 10px;
+  border-radius: 7px;
+  color: $light;
+  background-color: $sub2;
+  font-size: 16px;
+  border: 1px solid $sub2;
+  height: 50px;
+
+  &:hover {
+    color: $sub2;
+    background-color: $light;
+    border: 1px dashed $sub2;
+  }
+}
+
+#translateBtn {
+  border: none;
+  padding: 10px;
+  font-family: $font2;
+  letter-spacing: 2px;
+  // margin: 10px;
+  border-radius: 7px;
+  color: $light;
+  background-color: $sub2;
+  font-size: 16px;
+  border: 1px solid $sub2;
+  height: 50px;
+
+  &:hover {
+    color: $sub2;
+    background-color: $light;
+    border: 1px dashed $sub2;
+  }
+}
+
+.output {
+  background-color: $sub;
+  width: 187px;
+  border-radius: 15px;
+  > h2 {
+    @include h2;
+  }
+}
+
+.buttons {
+  display: flex;
+
+  &__btn {
+    margin: 0px 10px;
+  }
+}
+
+img {
+  padding-top: 5px;
+}
+
+.chart {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(210, 211, 147, 0.5);
+
+  > h2 {
+    @include h2;
+  }
+
+  > .grid-container {
+    display: block;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

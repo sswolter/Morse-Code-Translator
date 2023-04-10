@@ -1,74 +1,62 @@
-// console.log("logic script linked");
+import { aToZ } from "./data.js";
 
-const aToZ = {
-  A: ".-",
-  B: "-...",
-  C: "-.-.",
-  D: "-..",
-  E: ".",
-  F: "..-.",
-  G: "--.",
-  H: "....",
-  I: "..",
-  J: ".---",
-  K: "-.-",
-  L: ".-..",
-  M: "--",
-  N: "-.",
-  O: "---",
-  P: ".--.",
-  Q: "--.-",
-  R: ".-.",
-  S: "...",
-  T: "-",
-  U: "..-",
-  W: ".--",
-  X: "-..-",
-  Y: "-.--",
-  Z: "--..",
+const input = "this is a sentence with numbers 1 2 3 4, 5";
+let inputArray = [];
+
+// turn input string into an array
+export const stringToArray = (input, sepataror) => {
+  return input.toUpperCase().split(sepataror);
 };
 
-console.log(aToZ);
+// check if input has any unhandled characters
+export const validChars = (array, object) => {
+  return array.every(
+    (element) => element === " " || object.hasOwnProperty(element)
+  );
+};
 
-// english to morse code
-const inputEn = "hello";
-const inputEnArray = inputEn.split("");
-let outputMc = "";
-
-for (const letter of inputEnArray) {
-  //   console.log(letter);
-  for (const [key, value] of Object.entries(aToZ)) {
-    //   console.log(key, value);
-    if (letter.toUpperCase() === key) {
-      outputMc += value + " ";
+// convert string to morse code
+export const convertToMorse = (array) => {
+  let outputMc = "";
+  for (const letter of array) {
+    if (letter) {
+      if (letter === " ") {
+        outputMc += "/ ";
+      } else {
+        for (const [key, value] of Object.entries(aToZ)) {
+          if (letter.toUpperCase() === key) {
+            outputMc += value + " ";
+          }
+        }
+      }
     }
   }
+  return outputMc.trim();
+};
 
-  if (letter === " ") {
-    outputMc += "/";
-  }
-}
+inputArray = stringToArray(input, "");
 
-console.log(outputMc.trim());
-
-// morse code to english
-const inputMc = ".... . .-.. .-.. --- / ---";
-const inputMcArray = inputMc.split(" ");
-let outputEn = "";
-// console.log(inputMcArray);
-
-for (const code of inputMcArray) {
-  //   console.log(code);
-
-  for (const [key, value] of Object.entries(aToZ)) {
-    if (code === value) {
-      outputEn += key;
+export const convertFromMorse = (array, aToZ) => {
+  let outputMc = "";
+  for (let i = 0; i < array.length; i++) {
+    const code = array[i];
+    if (code) {
+      if (code === "/") {
+        outputMc += " ";
+      } else {
+        for (const [key, value] of Object.entries(aToZ)) {
+          if (code === value) {
+            outputMc += key;
+          }
+        }
+      }
     }
   }
+  return outputMc.trim();
+};
 
-  if (code === "/") {
-    outputEn += " ";
-  }
-}
-
-console.log(outputEn.trim().toLowerCase());
+export const validMorse = (array) => {
+  const chars = [".", "-", "/", " "];
+  const morseLetter = array.join("").split("");
+  return morseLetter.every((element) => chars.includes(element));
+};
