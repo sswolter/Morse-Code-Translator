@@ -1,6 +1,6 @@
 # Morse-Code-Translator
 
-Morse Code translator created using HTML, CSS/SASS, Javascript.
+Morse Code translator created using HTML, CSS/SCSS, Javascript.
 
 Able to:
 
