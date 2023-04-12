@@ -34,25 +34,25 @@ export const convertToMorse = (array) => {
   return outputMc.trim();
 };
 
-inputArray = stringToArray(input, "");
+// inputArray = stringToArray(input, "");
 
 export const convertFromMorse = (array, aToZ) => {
-  let outputMc = "";
+  let outputEn = "";
   for (let i = 0; i < array.length; i++) {
     const code = array[i];
     if (code) {
       if (code === "/") {
-        outputMc += " ";
+        outputEn += " ";
       } else {
         for (const [key, value] of Object.entries(aToZ)) {
           if (code === value) {
-            outputMc += key;
+            outputEn += key;
           }
         }
       }
     }
   }
-  return outputMc.trim();
+  return outputEn.trim();
 };
 
 export const validMorse = (array) => {

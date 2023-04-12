@@ -15,7 +15,7 @@ const translateBtn = document.getElementById("translateBtn");
 const inputLan = document.getElementById("inputLan");
 const heading = document.querySelector(".heading");
 
-img.addEventListener("click", (event) => {
+img.addEventListener("click", () => {
   if (morseOutput) {
     img.src = "./assets/reverse.svg";
     inputLan.innerText = "Text";
