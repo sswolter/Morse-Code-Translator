@@ -17,42 +17,42 @@ export const validChars = (array, object) => {
 
 // convert string to morse code
 export const convertToMorse = (array) => {
-  let outputMc = "";
-  for (const letter of array) {
-    if (letter) {
-      if (letter === " ") {
-        outputMc += "/ ";
-      } else {
-        for (const [key, value] of Object.entries(aToZ)) {
-          if (letter.toUpperCase() === key) {
-            outputMc += value + " ";
-          }
-        }
-      }
-    }
-  }
-  return outputMc.trim();
+  // let outputMc = "";
+  // for (const letter of array) {
+  //   if (letter) {
+  //     if (letter === " ") {
+  //       outputMc += "/ ";
+  //     } else {
+  //       for (const [key, value] of Object.entries(aToZ)) {
+  //         if (letter.toUpperCase() === key) {
+  //           outputMc += value + " ";
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+  // return outputMc.trim();
+
+  return array
+    .map((letter) => {
+      return aToZ[letter.toUpperCase()];
+    })
+    .join(" ");
 };
 
 // inputArray = stringToArray(input, "");
 
 export const convertFromMorse = (array, aToZ) => {
-  let outputEn = "";
-  for (let i = 0; i < array.length; i++) {
-    const code = array[i];
-    if (code) {
-      if (code === "/") {
-        outputEn += " ";
-      } else {
-        for (const [key, value] of Object.entries(aToZ)) {
-          if (code === value) {
-            outputEn += key;
-          }
-        }
-      }
-    }
-  }
-  return outputEn.trim();
+  const reversed = Object.entries(aToZ).reduce((acc, [key, value]) => {
+    acc[value] = key;
+    return acc;
+  }, {});
+
+  return array
+    .map((morse) => {
+      return reversed[morse];
+    })
+    .join("");
 };
 
 export const validMorse = (array) => {
