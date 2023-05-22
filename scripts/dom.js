@@ -5,7 +5,7 @@ import {
   convertFromMorse,
   validMorse,
 } from "./logic.js";
-import { aToZ } from "./data.js";
+import { data } from "./data.js";
 
 const inputArea = document.querySelector("#inputArea");
 const img = document.querySelector("img");
@@ -41,7 +41,7 @@ translateBtn.addEventListener("click", (event) => {
   if (!morseOutput) {
     inputArray = stringToArray(inputValue, "");
 
-    validChars(inputArray, aToZ)
+    validChars(inputArray, data)
       ? createOutput(convertToMorse(inputArray))
       : createOutput(
           "Unable to translate, view Morse Code Chart for supported characters."
@@ -50,7 +50,7 @@ translateBtn.addEventListener("click", (event) => {
     inputArray = stringToArray(inputValue, " ");
     console.log((inputArray = stringToArray(inputValue, " ")));
     validMorse(inputArray)
-      ? createOutput(convertFromMorse(inputArray, aToZ))
+      ? createOutput(convertFromMorse(inputArray, data))
       : createOutput(
           "Unable to translate, view Morse Code Chart for supported characters."
         );

@@ -1,4 +1,4 @@
-import { aToZ } from "./data.js";
+import { data } from "./data.js";
 
 const input = "this is a sentence with numbers 1 2 3 4, 5";
 let inputArray = [];
@@ -17,42 +17,26 @@ export const validChars = (array, object) => {
 
 // convert string to morse code
 export const convertToMorse = (array) => {
-  let outputMc = "";
-  for (const letter of array) {
-    if (letter) {
-      if (letter === " ") {
-        outputMc += "/ ";
-      } else {
-        for (const [key, value] of Object.entries(aToZ)) {
-          if (letter.toUpperCase() === key) {
-            outputMc += value + " ";
-          }
-        }
-      }
-    }
-  }
-  return outputMc.trim();
+  return array
+    .map((letter) => {
+      return data[letter.toUpperCase()];
+    })
+    .join(" ");
 };
 
 // inputArray = stringToArray(input, "");
 
-export const convertFromMorse = (array, aToZ) => {
-  let outputEn = "";
-  for (let i = 0; i < array.length; i++) {
-    const code = array[i];
-    if (code) {
-      if (code === "/") {
-        outputEn += " ";
-      } else {
-        for (const [key, value] of Object.entries(aToZ)) {
-          if (code === value) {
-            outputEn += key;
-          }
-        }
-      }
-    }
-  }
-  return outputEn.trim();
+export const convertFromMorse = (array, data) => {
+  const reversed = Object.entries(data).reduce((acc, [key, value]) => {
+    acc[value] = key;
+    return acc;
+  }, {});
+
+  return array
+    .map((letter) => {
+      return reversed[letter];
+    })
+    .join("");
 };
 
 export const validMorse = (array) => {
