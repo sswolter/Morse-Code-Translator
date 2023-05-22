@@ -8,7 +8,7 @@
   margin: 0px;
   color: $main;
   font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Regular",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    "Lucida Sans Unicode", Verdana, sans-serif;
 }
 
 html {
@@ -32,6 +32,10 @@ body {
     font-family: $font2;
     font-size: 50px;
     padding: 20px;
+
+    @media (min-width: 750px) {
+      color: black;
+    }
   }
 }
 
@@ -99,7 +103,6 @@ main {
   padding: 10px;
   font-family: $font2;
   letter-spacing: 2px;
-  // margin: 10px;
   border-radius: 7px;
   color: $light;
   background-color: $sub2;
@@ -119,7 +122,6 @@ main {
   padding: 10px;
   font-family: $font2;
   letter-spacing: 2px;
-  // margin: 10px;
   border-radius: 7px;
   color: $light;
   background-color: $sub2;

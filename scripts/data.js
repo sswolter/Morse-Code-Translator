@@ -1,4 +1,4 @@
-export const aToZ = {
+export const data = {
   A: ".-",
   B: "-...",
   C: "-.-.",
