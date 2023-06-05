@@ -23,20 +23,16 @@ body {
   height: 100vh;
 }
 .wrapper > h1 {
-  margin-top: 0px;
   font-family: "Fredoka", sans-serif;
-  font-size: 50px;
-  padding: 20px;
-}
-@media (min-width: 750px) {
-  .wrapper > h1 {
-    color: black;
-  }
+  font-size: 40px;
+  text-align: center;
+  margin-top: 20px;
+  word-wrap: break-word;
+  line-height: normal;
 }
 
 section {
   display: flex;
-  padding-bottom: 50px;
 }
 section > h3 {
   font-size: 13px;
@@ -57,7 +53,7 @@ main {
   padding-bottom: 20px;
 }
 .input > .heading {
-  background-color: rgb(210, 211, 147);
+  background-color: #d2d393;
   width: 90px;
   border-radius: 15px;
   padding-bottom: 30px;
@@ -68,6 +64,7 @@ main {
   padding: 15px 10px 10px 10px;
   color: #fffaf8;
   letter-spacing: 1px;
+  text-align: center;
 }
 .input__form {
   display: flex;
@@ -86,7 +83,7 @@ main {
   display: block;
   resize: none;
   border-radius: 15px;
-  border: 2px solid rgb(210, 211, 147);
+  border: 2px solid #d2d393;
   background-color: #fffaf8;
   padding: 15px;
   font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Regular";
@@ -98,14 +95,19 @@ main {
   bottom: 30px;
 }
 #inputArea:focus {
-  outline: solid 1px rgb(210, 211, 147);
+  outline: solid 1px #d2d393;
+}
+@media (max-width: 750px) {
+  #inputArea {
+    width: 300px;
+  }
 }
 
 #outputArea {
   display: block;
   resize: none;
   border-radius: 15px;
-  border: 2px solid rgb(210, 211, 147);
+  border: 2px solid #d2d393;
   background-color: #fffaf8;
   padding: 15px;
   font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Regular";
@@ -115,7 +117,12 @@ main {
   width: 680px;
 }
 #outputArea:focus {
-  outline: solid 1px rgb(210, 211, 147);
+  outline: solid 1px #d2d393;
+}
+@media (max-width: 750px) {
+  #outputArea {
+    width: 300px;
+  }
 }
 
 #clearBtn {
@@ -155,7 +162,7 @@ main {
 }
 
 .output {
-  background-color: rgb(210, 211, 147);
+  background-color: #d2d393;
   width: 187px;
   border-radius: 15px;
 }
@@ -182,9 +189,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 .chart > h2 {
   font-family: "Fredoka", sans-serif;
@@ -193,21 +198,58 @@ img {
   color: #fffaf8;
   letter-spacing: 1px;
   color: #c69a7f;
-}
-.chart > .grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 10px;
-  padding-top: 20px;
-  width: 500px;
-}
-.chart > .grid-container > .grid-item {
   text-align: center;
-  border: 1px solid #fffaf8;
+  line-height: normal;
+  margin-top: 100px;
+}
+.chart .outer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.chart .outer > .grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  padding: 20px;
+}
+@media (min-width: 750px) {
+  .chart .outer > .grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+.chart .outer > .grid-container > .grid-item {
+  text-align: center;
   padding: 10px 0px;
 }
-.chart > .grid-container > .grid-item > p {
+.chart .outer > .grid-container > .grid-item > p {
   font-weight: bold;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #fffaf8;
+  color: #8f6d4c;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px dotted #d2d393;
+  position: absolute;
+  width: 120px;
+  bottom: 110%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  font-size: small;
 }
 
 /*# sourceMappingURL=styles.css.map */

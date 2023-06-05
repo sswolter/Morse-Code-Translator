@@ -16,6 +16,10 @@
   &:focus {
     outline: solid 1px $sub;
   }
+
+  @media (max-width: 750px) {
+    width: 300px;
+  }
 }
 
 @mixin h2 {
