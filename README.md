@@ -1,3 +1,5 @@
+# Morse Code Translator
+
 ## Demo
 
 ![morse code translator screenshot](./assets/img-1.png)
