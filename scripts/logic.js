@@ -1,7 +1,7 @@
 import { data } from "./data.js";
 
-const input = "this is a sentence with numbers 1 2 3 4, 5";
-let inputArray = [];
+// const input = "this is a sentence with numbers 1 2 3 4, 5";
+// let inputArray = [];
 
 // turn input string into an array
 export const stringToArray = (input, sepataror) => {
@@ -10,9 +10,7 @@ export const stringToArray = (input, sepataror) => {
 
 // check if input has any unhandled characters
 export const validChars = (array, object) => {
-  return array.every(
-    (element) => element === " " || object.hasOwnProperty(element)
-  );
+  return array.every((element) => object.hasOwnProperty(element));
 };
 
 // convert string to morse code
@@ -24,10 +22,8 @@ export const convertToMorse = (array) => {
     .join(" ");
 };
 
-// inputArray = stringToArray(input, "");
-
-export const convertFromMorse = (array, data) => {
-  const reversed = Object.entries(data).reduce((acc, [key, value]) => {
+export const convertFromMorse = (array, obj) => {
+  const reversed = Object.entries(obj).reduce((acc, [key, value]) => {
     acc[value] = key;
     return acc;
   }, {});

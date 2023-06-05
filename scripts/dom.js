@@ -14,6 +14,7 @@ const clearBtn = document.getElementById("clearBtn");
 const translateBtn = document.getElementById("translateBtn");
 const inputLan = document.getElementById("inputLan");
 const heading = document.querySelector(".heading");
+const toolTip = document.querySelector(".tooltiptext");
 
 img.addEventListener("click", () => {
   if (morseOutput) {

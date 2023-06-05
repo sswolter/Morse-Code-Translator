@@ -5,7 +5,7 @@ import {
   validChars,
   validMorse,
 } from "./logic.js";
-import { aToZ } from "./data.js";
+import { data } from "./data.js";
 
 describe("test cases for a function that translates english to morse code", () => {
   it("should convert a string into an array", () => {
@@ -61,10 +61,10 @@ describe("test cases for a function that translates english to morse code", () =
   });
 
   it("should check input for valid input characters", () => {
-    expect(validChars(["W", "O", "R", "D"], aToZ)).toEqual(true);
-    expect(validChars(["1", "2", "R", "D"], aToZ)).toEqual(true);
-    expect(validChars(["W", "O", "R", "d", " "], aToZ)).toEqual(false);
-    expect(validChars(["1", "2", "R", "D", "="], aToZ)).toEqual(false);
+    expect(validChars(["W", "O", "R", "D"], data)).toEqual(true);
+    expect(validChars(["1", "2", "R", "D"], data)).toEqual(true);
+    expect(validChars(["W", "O", "R", "d", " "], data)).toEqual(false);
+    expect(validChars(["1", "2", "R", "D", "/"], data)).toEqual(false);
   });
 
   it("should convert input to morse code", () => {
@@ -162,7 +162,7 @@ describe("test cases for a function that translates morse code to english", () =
   });
 
   it("should convert input to english", () => {
-    expect(convertFromMorse([".--", "---", ".-.", "-.."], aToZ)).toEqual(
+    expect(convertFromMorse([".--", "---", ".-.", "-.."], data)).toEqual(
       "WORD"
     );
     expect(
@@ -187,8 +187,9 @@ describe("test cases for a function that translates morse code to english", () =
           "-.-.",
           ".",
         ],
-        aToZ
+        data
       )
     ).toEqual("THIS IS A SENTENCE");
+    expect(convertFromMorse("/", data)).toEqual(" ");
   });
 });
